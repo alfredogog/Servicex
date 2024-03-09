@@ -24,7 +24,7 @@ public class Servico {
     private String nomeServico;
     @Column(name = "VALOR_SERVICO")
     private Double valor;
-    @ManyToOne
+    @ManyToOne(targetEntity = Categoria.class)
     @JoinColumn(name = "idCategoria")
     private List<Categoria> categoria;
     @OneToMany

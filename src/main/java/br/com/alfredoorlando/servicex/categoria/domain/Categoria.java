@@ -1,7 +1,8 @@
 package br.com.alfredoorlando.servicex.categoria.domain;
 
+import br.com.alfredoorlando.servicex.servico.domain.Servico;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class Categoria {
     private Integer idCategoria;
     @Column(name = "NOME_CATEGORIA")
     private String nomeCategoria;
+    @JsonIgnore
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     private List<Servico> servicos;
 
